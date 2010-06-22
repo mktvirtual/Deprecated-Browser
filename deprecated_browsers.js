@@ -29,7 +29,7 @@ function deprecated(color){
 		leftSide.style.width = '425px';
 		leftSide.style.cssFloat = 'left';		
 		
-		rightSide.style.width = '250px';
+		rightSide.style.width = '220px';
 		rightSide.style.position = 'absolute';
 		rightSide.style.right = '15px';
 		
