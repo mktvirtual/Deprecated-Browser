@@ -29,8 +29,9 @@ function deprecated(color){
 		rightSide.style.cssFloat = 'right';
 		rightSide.style.overflow = 'hidden';
 		rightSide.style.backgroundColor = '#e92e09';
-		middle.appendChild(leftSide);
 		middle.appendChild(rightSide);
+		middle.appendChild(leftSide);
+		
 		
 		//inserindo logos dos browsers
 		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
