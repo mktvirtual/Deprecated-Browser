@@ -52,7 +52,7 @@ function deprecated(color){
 		var closeButton = document.getElementById('close_deprecated');
 		closeButton.style.position = 'absolute';
 		closeButton.style.right = '0';
-		closeButton.style.top = '14px';
+		closeButton.style.top = '12px';
 		closeButton.style.padding = '0';
 		
 
