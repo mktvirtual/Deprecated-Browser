@@ -21,11 +21,12 @@ function deprecated(target, color){
 		rightSide.setAttribute('id', 'right_deprecated');
 		rightSide.style.width = '250px';
 		rightSide.style.cssFloat = 'right';
+		rightSide.style.overflow = 'hidden';
 		middle.appendChild(leftSide);
 		middle.appendChild(rightSide);
 		
 		//inserindo logos dos browsers
-		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a>';
+		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
 		
 		var logos = rightSide.getElementsByTagName('a');
 		for (var i = logos.length - 1; i >= 0; i--){
@@ -35,7 +36,9 @@ function deprecated(target, color){
 			k.style.marginRight = '10px';
 			k.style.width = k.style.height = '38px';
 			};
-		
+		var closeButton = document.getElementById('close_deprecated');
+		closeButton.style.width = closeButton.style.height = '15px';
+		closeButton.style.marginTop = '10px';
 		
 		var info = document.createElement('p');
 		info.setAttribute('id', 'info_deprecated');
@@ -51,4 +54,3 @@ function deprecated(target, color){
 	}
 }
 
-window.onload = deprecated('deprecated', '#ffc440');
