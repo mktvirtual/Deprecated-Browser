@@ -1,6 +1,14 @@
-function deprecated(target, color){
+function deprecated(color){
 	if (document.createElement){ //Testando se é possível criar elementos pelo DOM
-		var target = document.getElementById(target);
+		
+		
+		document.body.prependChild = function(newChild) {
+			this.insertBefore(newChild, this.firstChild);
+			};		
+		var deprecated_browser = document.createElement('div');
+		document.body.prependChild(deprecated_browser);	
+		
+		var target = document.getElementById(deprecated_browser);
 		//Aqui começa a criação do elemento
 		// 
 		target.style.backgroundColor = color;
