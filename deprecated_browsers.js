@@ -32,10 +32,10 @@ function deprecated(target, color){
 		var logos = rightSide.getElementsByTagName('a');
 		for (var i = logos.length - 1; i >= 0; i--){
 			var k = rightSide.getElementsByTagName('a')[i];
-			k.style.display = 'block';
-			k.style.cssFloat = 'left';
-			k.style.marginRight = '10px';
-			k.style.width = k.style.height = '38px';
+			// k.style.display = 'block';
+			// 			k.style.cssFloat = 'left';
+			k.style.paddingRight = '10px';
+			// k.style.width = k.style.height = '38px';
 			};
 		var closeButton = document.getElementById('close_deprecated');
 		closeButton.style.width = closeButton.style.height = '15px';
