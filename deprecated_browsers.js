@@ -22,6 +22,7 @@ function deprecated(target, color){
 		rightSide.style.width = '250px';
 		rightSide.style.cssFloat = 'right';
 		rightSide.style.overflow = 'hidden';
+		rightSide.style.backgroundColor = '#e92e09';
 		middle.appendChild(leftSide);
 		middle.appendChild(rightSide);
 		
