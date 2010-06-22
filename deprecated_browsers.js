@@ -6,20 +6,19 @@ function deprecated(color){
 			this.insertBefore(newChild, this.firstChild);
 			};		
 		var deprecated_browser = document.createElement('div');
+		deprecated_browser.setAttribute('id', 'deprecated_browser');
 		document.body.prependChild(deprecated_browser);	
-		
-		var target = document.getElementById(deprecated_browser);
 		//Aqui começa a criação do elemento
 		// 
-		target.style.backgroundColor = color;
-		target.style.height = '43px';
-		target.style.paddingTop = '7px';
+		deprecated_browser.style.backgroundColor = color;
+		deprecated_browser.style.height = '43px';
+		deprecated_browser.style.paddingTop = '7px';
 		
 		var middle = document.createElement('div');
 		middle.setAttribute('id', 'deprecated_owner');
 		middle.style.width = '778px';
 		middle.style.margin = '0 auto';
-		target.appendChild(middle);
+		deprecated_browser.appendChild(middle);
 		
 		var leftSide = document.createElement('div');
 		leftSide.setAttribute('id', 'left_deprecated');
@@ -35,7 +34,7 @@ function deprecated(color){
 		middle.appendChild(rightSide);
 		
 		//inserindo logos dos browsers
-		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" target="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
+		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
 		
 		var logos = rightSide.getElementsByTagName('a');
 		for (var i = logos.length - 1; i >= 0; i--){
