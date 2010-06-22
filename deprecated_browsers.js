@@ -1,7 +1,6 @@
 function deprecated(color){
 	if (document.createElement){ //Testando se é possível criar elementos pelo DOM
-		
-		
+
 		document.body.prependChild = function(newChild) {
 			this.insertBefore(newChild, this.firstChild);
 			};		
@@ -9,7 +8,6 @@ function deprecated(color){
 		deprecated_browser.setAttribute('id', 'deprecated_browser');
 		document.body.prependChild(deprecated_browser);	
 		//Aqui começa a criação do elemento
-		// 
 		deprecated_browser.style.backgroundColor = color;
 		deprecated_browser.style.height = '43px';
 		deprecated_browser.style.paddingTop = '7px';
@@ -18,6 +16,7 @@ function deprecated(color){
 		middle.setAttribute('id', 'deprecated_owner');
 		middle.style.width = '778px';
 		middle.style.margin = '0 auto';
+		middle.style.overflow = 'hidden';
 		deprecated_browser.appendChild(middle);
 		
 		var leftSide = document.createElement('div');
