@@ -1,0 +1,11 @@
+deprecated_browser
+
+<div id="content_deprecated_browser">
+	<a id="close_about_deprecated_browser">X</a>
+	
+	<p id="tit_deprecated_browser">Por que devo atualizar?</p>
+	<p id="description_deprecated_browser"></p>
+	<p id="tit_deprecated_browser"></p>
+	
+	
+</div>
