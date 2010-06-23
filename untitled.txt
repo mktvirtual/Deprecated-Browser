@@ -4,8 +4,12 @@ deprecated_browser
 	<a id="close_about_deprecated_browser">X</a>
 	
 	<p id="tit_deprecated_browser">Por que devo atualizar?</p>
-	<p id="description_deprecated_browser"></p>
-	<p id="tit_deprecated_browser"></p>
-	
-	
+	<p id="description_deprecated_browser">Os navegadores antigos, como o <strong>Internet Explorer 6</strong>, possuem sérios problemas de segurança e não são compatíveis com muitas funcionalidades dos sites atuais. Por isso, para ter uma melhor experiência de navegação e evitar riscos com vírus e programas espiões, baixe gratuitamente e instale no seu computador um dos navegadores modernos disponíveis.</p>
+	<p id="tit_deprecated_browser">Atualize-o gratuitamente já!</p>
+	<ul>
+		<li><a href=""><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox_b.png" alt="" /></a></li>
+		<li><a href=""><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie_b.png" alt="" /></a></li>
+		<li><a href=""><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome_b.png" alt="Download Chrome" /></a></li>
+		<li><a href=""><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari_b.png" alt="" /></a></li>
+	</ul>
 </div>

@@ -24,14 +24,35 @@
 	"IMG")if(el.src.toLowerCase().search(/\.png$/)!=-1){el.isImg=true;el.style.visibility="hidden"}else return;else if(el.currentStyle.backgroundImage.toLowerCase().search(".png")==-1)return;lib=DD_belatedPNG;el.vml={color:{},image:{}};els={shape:{},fill:{}};for(v in el.vml)if(el.vml.hasOwnProperty(v)){for(e in els)if(els.hasOwnProperty(e)){nodeStr=lib.ns+":"+e;el.vml[v][e]=document.createElement(nodeStr)}el.vml[v].shape.stroked=false;el.vml[v].shape.appendChild(el.vml[v].fill);el.parentNode.insertBefore(el.vml[v].shape,
 	el)}el.vml.image.shape.fillcolor="none";el.vml.image.fill.type="tile";el.vml.color.fill.on=false;lib.attachHandlers(el);lib.giveLayout(el);lib.giveLayout(el.offsetParent);el.vmlInitiated=true;lib.applyVML(el)}};try{document.execCommand("BackgroundImageCache",false,true)}catch(r){}DD_belatedPNG.createVmlNameSpace();DD_belatedPNG.createVmlStyleSheet();
 
+	function closeDeprecated(){document.getElementById("deprecated_browser").style.display = 'none';}
+	function closeFancy(){document.getElementById("about_deprecated_browser").style.display = 'none';}
+
 	function aboutDeprecated(){
-		//
-		}
- 	function closeDeprecated(){
-		document.getElementById("deprecated_browser").style.display = 'none';			
-		}
 		
-function deprecated(color){
+		colorBg = document.getElementById("deprecated_browser").style.backgroundColor;
+		colorText = document.getElementById("deprecated_browser").style.color;
+		
+		var about_deprecated_browser  = document.createElement('div');	
+		about_deprecated_browser.style.backgroundColor = colorBg;
+			document.body.prependChild = function(newChild) {
+				this.insertBefore(newChild, this.firstChild);
+				};
+			document.body.prependChild(about_deprecated_browser);	
+			about_deprecated_browser.setAttribute('id', 'about_deprecated_browser');
+			about_deprecated_browser.innerHTML = "<div id='content_deprecated_browser'><a href='#' onClick='closeFancy()' id='close_about_deprecated_browser'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png' alt='Fechar' /></a><p class='tit_deprecated_browser'>Por que devo atualizar?</p><p id='description_deprecated_browser'>Os navegadores antigos, como o <strong>Internet Explorer 6</strong>, possuem sérios problemas de segurança e não são compatíveis com muitas funcionalidades dos sites atuais. Por isso, para ter uma melhor experiência de navegação e evitar riscos com vírus e programas espiões, baixe gratuitamente e instale no seu computador um dos navegadores modernos disponíveis.</p><p class='tit_deprecated_browser'>Atualize-o gratuitamente já!</p><ul><li><a target='blank' href='http://br.mozdev.org'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/firefox_b.png' alt='Download Firefox' /></a></li><li><a target='blank' href='http://www.microsoft.com/brasil/windows/internet-explorer'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/ie_b.png' alt='Download Internet Explorer' /></a></li><li><a target='blank' href='http://www.google.com.br/chrome'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/chrome_b.png' alt='Download Chrome' /></a></li>						<li><a target='blank' href='http://www.apple.com/br/safari'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/safari_b.png' alt='Download Safari' /></a></li></ul></div>"
+							
+			document.getElementById("about_deprecated_browser").style.backgroundColor = colorBg;
+			var box_deprecated_browser = document.getElementById("content_deprecated_browser").getElementsByTagName('p');				
+			for (var i = 0; i <= box_deprecated_browser.length; i++){
+				var k = document.getElementById("content_deprecated_browser").childNodes[i];
+				k.style.color = colorText;
+				};
+		}//end aboutDeprecated
+		
+		
+ 
+
+function deprecated(colorBg, colorText){
 	if (document.createElement){ //Testando se é possível criar elementos pelo DOM
 		document.body.prependChild = function(newChild) {
 			this.insertBefore(newChild, this.firstChild);
@@ -40,7 +61,8 @@ function deprecated(color){
 		deprecated_browser.setAttribute('id', 'deprecated_browser');
 		document.body.prependChild(deprecated_browser);	
 		//Aqui começa a criação do elemento
-		deprecated_browser.style.backgroundColor = color;
+		deprecated_browser.style.backgroundColor = colorBg;
+		deprecated_browser.style.color = colorText;
 		deprecated_browser.style.height = '43px';
 		deprecated_browser.style.paddingTop = '7px';
 
@@ -85,17 +107,20 @@ function deprecated(color){
 		closeButton.style.padding = '0';
 
 		DD_belatedPNG.fix('img');
-
+		
 		var info = document.createElement('p');
+		var readMoore = document.createElement('p');
+		
 		info.setAttribute('id', 'info_deprecated');
 		info.style.font = 'bold 14px "Tahoma", verdana, arial';
 		info.style.marginBottom = '3px';
-		var readMoore = document.createElement('p');
+		info.style.color = readMoore.style.color = colorText;			
 		readMoore.setAttribute('id', 'info_moore_deprecated');
 		readMoore.style.font = 'normal 11px "Tahoma", verdana, arial';					
 		info.innerHTML = 'Seu navegador é antigo e possui sérias falhas de segurança.';
-		readMoore.innerHTML = 'Atualize-o gratuitamente por um dos navegadores ao lado. <a style="color:#000;" id="read_moore_link" href="#">Saiba mais</a>';
+		readMoore.innerHTML = 'Atualize-o gratuitamente por um dos navegadores ao lado. <a id="read_moore_link" href="#" onClick="aboutDeprecated();">Saiba mais</a>';
 		leftSide.appendChild(info);	
 		leftSide.appendChild(readMoore);			
+		document.getElementById('read_moore_link').style.color = colorText;
 	}
 }
