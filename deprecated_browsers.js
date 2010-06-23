@@ -4,6 +4,8 @@
 * URL: http://github.com/brunomarks/updatebrowser
 * Version: 1.0
 * Licensed under the MIT License
+* usage: include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js
+* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
 **/
 
 	var DD_belatedPNG={ns:"DD_belatedPNG",imgSize:{},delay:10,nodesFixed:0,createVmlNameSpace:function(){if(document.namespaces&&!document.namespaces[this.ns])document.namespaces.add(this.ns,"urn:schemas-microsoft-com:vml")},createVmlStyleSheet:function(){var screenStyleSheet,printStyleSheet;screenStyleSheet=document.createElement("style");screenStyleSheet.setAttribute("media","screen");document.documentElement.firstChild.insertBefore(screenStyleSheet,document.documentElement.firstChild.firstChild);if(screenStyleSheet.styleSheet){screenStyleSheet=
