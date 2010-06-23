@@ -6,8 +6,6 @@
 * Licensed under the MIT License
 **/
 
-function deprecated(color){
-	
 	var DD_belatedPNG={ns:"DD_belatedPNG",imgSize:{},delay:10,nodesFixed:0,createVmlNameSpace:function(){if(document.namespaces&&!document.namespaces[this.ns])document.namespaces.add(this.ns,"urn:schemas-microsoft-com:vml")},createVmlStyleSheet:function(){var screenStyleSheet,printStyleSheet;screenStyleSheet=document.createElement("style");screenStyleSheet.setAttribute("media","screen");document.documentElement.firstChild.insertBefore(screenStyleSheet,document.documentElement.firstChild.firstChild);if(screenStyleSheet.styleSheet){screenStyleSheet=
 	screenStyleSheet.styleSheet;screenStyleSheet.addRule(this.ns+"\\:*","{behavior:url(#default#VML)}");screenStyleSheet.addRule(this.ns+"\\:shape","position:absolute;");screenStyleSheet.addRule("img."+this.ns+"_sizeFinder","behavior:none; border:none; position:absolute; z-index:-1; top:-10000px; visibility:hidden;");this.screenStyleSheet=screenStyleSheet;printStyleSheet=document.createElement("style");printStyleSheet.setAttribute("media","print");document.documentElement.firstChild.insertBefore(printStyleSheet,
 	document.documentElement.firstChild.firstChild);printStyleSheet=printStyleSheet.styleSheet;printStyleSheet.addRule(this.ns+"\\:*","{display: none !important;}");printStyleSheet.addRule("img."+this.ns+"_sizeFinder","{display: none !important;}")}},readPropertyChange:function(){var el,display,v;el=event.srcElement;if(!el.vmlInitiated)return;if(event.propertyName.search("background")!=-1||event.propertyName.search("border")!=-1)DD_belatedPNG.applyVML(el);if(event.propertyName=="style.display"){display=
@@ -23,14 +21,16 @@ function deprecated(color){
 	0;break;case "center":bg[axis]=0.5;break;case "right":case "bottom":bg[axis]=1;break;default:if(position.search("%")!=-1)bg[axis]=parseInt(position,10)/100;else fraction=false}bg[axis]=Math.ceil(fraction?size[horizontal?"W":"H"]*bg[axis]-size[horizontal?"w":"h"]*bg[axis]:parseInt(position,10));if(bg[axis]%2===0)bg[axis]++;return bg[axis]},fixPng:function(el){el.style.behavior="none";var lib,els,nodeStr,v,e;if(el.nodeName=="BODY"||el.nodeName=="TD"||el.nodeName=="TR")return;el.isImg=false;if(el.nodeName==
 	"IMG")if(el.src.toLowerCase().search(/\.png$/)!=-1){el.isImg=true;el.style.visibility="hidden"}else return;else if(el.currentStyle.backgroundImage.toLowerCase().search(".png")==-1)return;lib=DD_belatedPNG;el.vml={color:{},image:{}};els={shape:{},fill:{}};for(v in el.vml)if(el.vml.hasOwnProperty(v)){for(e in els)if(els.hasOwnProperty(e)){nodeStr=lib.ns+":"+e;el.vml[v][e]=document.createElement(nodeStr)}el.vml[v].shape.stroked=false;el.vml[v].shape.appendChild(el.vml[v].fill);el.parentNode.insertBefore(el.vml[v].shape,
 	el)}el.vml.image.shape.fillcolor="none";el.vml.image.fill.type="tile";el.vml.color.fill.on=false;lib.attachHandlers(el);lib.giveLayout(el);lib.giveLayout(el.offsetParent);el.vmlInitiated=true;lib.applyVML(el)}};try{document.execCommand("BackgroundImageCache",false,true)}catch(r){}DD_belatedPNG.createVmlNameSpace();DD_belatedPNG.createVmlStyleSheet();
-	
-	
+
 	function aboutDeprecated(){
-		console.log('ok');
+		//
 		}
-
+ 	function closeDeprecated(){
+		document.getElementById("deprecated_browser").style.display = 'none';			
+		}
+		
+function deprecated(color){
 	if (document.createElement){ //Testando se é possível criar elementos pelo DOM
-
 		document.body.prependChild = function(newChild) {
 			this.insertBefore(newChild, this.firstChild);
 			};		
@@ -64,8 +64,7 @@ function deprecated(color){
 		rightSide.style.right = '15px';
 
 		//inserindo logos dos browsers
-		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
-		
+		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" onClick="closeDeprecated()" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
 
 		middle.appendChild(rightSide);			
 		middle.appendChild(leftSide);
@@ -95,9 +94,6 @@ function deprecated(color){
 		info.innerHTML = 'Seu navegador é antigo e possui sérias falhas de segurança.';
 		readMoore.innerHTML = 'Atualize-o gratuitamente por um dos navegadores ao lado. <a style="color:#000;" id="read_moore_link" href="#">Saiba mais</a>';
 		leftSide.appendChild(info);	
-		leftSide.appendChild(readMoore);
-		
-		document.getElementById("read_moore_link").addEventListener('click',aboutDeprecated,false)
-		
+		leftSide.appendChild(readMoore);			
 	}
 }
