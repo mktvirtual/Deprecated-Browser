@@ -1,6 +1,7 @@
 #deprecated_browser{
 	height:43px;
 	padding-top:7px;
+	display:block;
 	}
 	#deprecated_browser #deprecated_owner{
 		margin:0 auto;

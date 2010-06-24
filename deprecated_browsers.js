@@ -43,6 +43,7 @@ init:function(colorBg, colorText){
 		document.body.prependChild(deprecated_browser);	
 		deprecated_browser.style.backgroundColor = colorBg;
 		deprecated_browser.style.color = colorText;
+		deprecated_browser.display = 'none';
 		var middle = document.createElement('div');
 		middle.setAttribute('id', 'deprecated_owner');
 		deprecated_browser.appendChild(middle);
