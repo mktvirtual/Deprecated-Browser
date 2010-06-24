@@ -1,0 +1,19 @@
+	
+	/**
+	* Author: MKT VIRTUAL (Bruno Marques)
+	* Email: bruno@mktvirtual.com.br
+	* URL: http://github.com/brunomarks/updatebrowser
+	* Version: 1.0
+	* Licensed under the MIT License
+	* usage: include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js
+	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
+	**/	
+
+usage: 
+include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js (size: 20.098 kb)
+or
+include minify js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js (size: 14.587 kb)
+
+after this, call init,
+deprecated_browser.init(bgColor, textColor);
+where color = hexadecimal string
