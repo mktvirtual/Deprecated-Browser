@@ -24,59 +24,7 @@
 	el)}el.vml.image.shape.fillcolor="none";el.vml.image.fill.type="tile";el.vml.color.fill.on=false;lib.attachHandlers(el);lib.giveLayout(el);lib.giveLayout(el.offsetParent);el.vmlInitiated=true;lib.applyVML(el)}};try{document.execCommand("BackgroundImageCache",false,true)}catch(r){}DD_belatedPNG.createVmlNameSpace();DD_belatedPNG.createVmlStyleSheet();
 
 var deprecated_browser = {
-init:function(colorBg, colorText){
-			
-	var headID = document.getElementsByTagName("head")[0];         
-	var cssNode = document.createElement('link');
-	cssNode.type = 'text/css';
-	cssNode.rel = 'stylesheet';
-	cssNode.href = 'http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.css';
-	cssNode.media = 'screen';
-	headID.appendChild(cssNode);
-	
-	if (document.createElement){
-		document.body.prependChild = function(newChild) {
-			this.insertBefore(newChild, this.firstChild);
-			};		
-		var deprecated_browser = document.createElement('div');
-		deprecated_browser.setAttribute('id', 'deprecated_browser');
-		document.body.prependChild(deprecated_browser);	
-		deprecated_browser.style.backgroundColor = colorBg;
-		deprecated_browser.style.color = colorText;
-		deprecated_browser.display = 'none';
-		var middle = document.createElement('div');
-		middle.setAttribute('id', 'deprecated_owner');
-		deprecated_browser.appendChild(middle);
 
-		var leftSide = document.createElement('div');
-		var rightSide = document.createElement('div');
-		leftSide.setAttribute('id', 'left_deprecated');
-		rightSide.setAttribute('id', 'right_deprecated');
-		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" onClick="deprecated_browser.closeDeprecated()" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
-		middle.appendChild(rightSide);			
-		middle.appendChild(leftSide);
-
-		var logos = rightSide.getElementsByTagName('a');
-		for (var i = logos.length - 1; i >= 0; i--){
-			var k = rightSide.getElementsByTagName('a')[i];
-			var imageAlpha = k.firstChild;
-			imageAlpha.setAttribute('class', 'deprecated_browser_icob');
-			};
-		var closeButton = document.getElementById('close_deprecated');
-		DD_belatedPNG.fix('img');
-		var info = document.createElement('p');
-		var readMoore = document.createElement('p');
-
-		info.setAttribute('id', 'info_deprecated');
-		info.style.color = readMoore.style.color = colorText;			
-		readMoore.setAttribute('id', 'info_moore_deprecated');
-		info.innerHTML = 'Seu navegador é antigo e possui sérias falhas de segurança.';
-		readMoore.innerHTML = 'Atualize-o gratuitamente por um dos navegadores ao lado. <a id="read_moore_link" href="#" onClick="deprecated_browser.aboutDeprecated();">Saiba mais</a>';
-		leftSide.appendChild(info);	
-		leftSide.appendChild(readMoore);			
-		document.getElementById('read_moore_link').style.color = colorText;
-	}
-},
 closeDeprecated:function(){
 	document.getElementById("deprecated_browser").style.display = 'none';
 	deprecated_browser.setCookie('deprecated_browser','jabulani',2);
@@ -115,24 +63,85 @@ getCookie:function(c_name){
 			return unescape(document.cookie.substring(c_start,c_end));
 		} 
 	}
-	return ""
+	return false;
 },
 setCookie:function(c_name,value,expiredays){
 	var exdate=new Date();
 	exdate.setDate(exdate.getDate()+expiredays);
 	document.cookie=c_name+ "=" +escape(value)+((expiredays==null) ? "" : "; expires="+exdate.toUTCString());
 },
-checkCookie:function(){				
-	var cookie_deprecated=controlCookie.getCookie('deprecated_browser');
-	if (cookie_deprecated!=null && cookie_deprecated!=""){
-		alert('ja existe')
+checkCookie:function() {
+	var cookie_deprecated = deprecated_browser.getCookie('deprecated_browser');
+	if (cookie_deprecated!=null && cookie_deprecated!="") {
+		return true;
 	}
-	else{
-		alert('nao existe')
+	else {
 		cookie_deprecated='jabulani';
 		if (cookie_deprecated!=null && cookie_deprecated!=""){
-			controlCookie.setCookie('deprecated_browser',cookie_deprecated,2);
+			deprecated_browser.setCookie('deprecated_browser',cookie_deprecated,2);
 		}
+		return false;
+	}
+},
+
+init : function(colorBg, colorText) {
+	
+	if (this.getCookie('deprecated_browser').length > 0) 
+		return false;
+	
+	var headID = document.getElementsByTagName("head")[0];         
+	var cssNode = document.createElement('link');
+	cssNode.type = 'text/css';
+	cssNode.rel = 'stylesheet';
+	cssNode.href = 'http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.css';
+	cssNode.media = 'screen';
+	headID.appendChild(cssNode);
+	
+	if (document.createElement){
+		document.body.prependChild = function(newChild) {
+			this.insertBefore(newChild, this.firstChild);
+			};		
+		var deprecated_browser = document.createElement('div');
+		deprecated_browser.setAttribute('id', 'deprecated_browser');
+		document.body.prependChild(deprecated_browser);	
+		deprecated_browser.style.backgroundColor = colorBg;
+		deprecated_browser.style.color = colorText;
+		var middle = document.createElement('div');
+		middle.setAttribute('id', 'deprecated_owner');
+		middle.style.margin = '0 auto';
+		middle.style.position = 'relative';
+		middle.style.width = '778px';
+	
+		deprecated_browser.appendChild(middle);
+
+		var leftSide = document.createElement('div');
+		var rightSide = document.createElement('div');
+		leftSide.setAttribute('id', 'left_deprecated');
+		rightSide.setAttribute('id', 'right_deprecated');
+		rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" onClick="deprecated_browser.closeDeprecated()" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
+		middle.appendChild(rightSide);			
+		middle.appendChild(leftSide);
+
+		var logos = rightSide.getElementsByTagName('a');
+		for (var i = logos.length - 1; i >= 0; i--){
+			var k = rightSide.getElementsByTagName('a')[i];
+			var imageAlpha = k.firstChild;
+			imageAlpha.setAttribute('class', 'deprecated_browser_icob');
+			};
+		var closeButton = document.getElementById('close_deprecated');
+		DD_belatedPNG.fix('img');
+		var info = document.createElement('p');
+		var readMoore = document.createElement('p');
+
+		info.setAttribute('id', 'info_deprecated');
+		info.style.color = readMoore.style.color = colorText;			
+		readMoore.setAttribute('id', 'info_moore_deprecated');
+		info.innerHTML = 'Seu navegador é antigo e possui sérias falhas de segurança.';
+		readMoore.innerHTML = 'Atualize-o gratuitamente por um dos navegadores ao lado. <a id="read_moore_link" href="#" onClick="deprecated_browser.aboutDeprecated();">Saiba mais</a>';
+		leftSide.appendChild(info);	
+		leftSide.appendChild(readMoore);			
+		document.getElementById('read_moore_link').style.color = colorText;
+		
 	}
 }
 }
