@@ -71,5 +71,6 @@
 			}	
 			#about_deprecated_browser #content_deprecated_browser ul li{
 				float:left;
+				list-style:none;
 				width:100px;
 				}

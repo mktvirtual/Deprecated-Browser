@@ -4,6 +4,7 @@
 	* URL: http://github.com/brunomarks/updatebrowser
 	* Version: 1.0
 	* Licensed under the MIT License
+	* Compatible with (IE6, IE7, Firefox < 3.6, Chrome, Safari 3)
 	* usage: include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js
 	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
 	**/	

@@ -1,0 +1,4 @@
+<script type="text/javascript" src="http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+	deprecated_browser.init('#C12404', 'white');
+</script>
