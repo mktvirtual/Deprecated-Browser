@@ -337,8 +337,10 @@
 	* usage: include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js
 	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
 	**/	
-var deprecated_browser = {	
-	closeDeprecated:function(){
+	
+var deprecated_browser = {
+	
+	closeDeprecated: function(){
 		document.getElementById("deprecated_browser").style.display = 'none';
 		deprecated_browser.setCookie('deprecated_browser','jabulani',2);
 		if(document.getElementById("about_deprecated_browser"))deprecated_browser.closeFancy();

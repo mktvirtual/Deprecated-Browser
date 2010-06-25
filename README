@@ -1,4 +1,3 @@
-	
 	/**
 	* Author: MKT VIRTUAL (Bruno Marques)
 	* Email: bruno@mktvirtual.com.br
@@ -14,6 +13,27 @@ include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_br
 or
 include minify js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js (size: 14.587 kb)
 
-after this, call init,
+call init function
 deprecated_browser.init(bgColor, textColor);
 where color = hexadecimal string
+
+<html>
+	<head>
+		<title>Title of the document</title>
+	</head>
+	<body>
+		<div>The content of the document</div>
+		<!--[if lt ie 7]>
+			<script type="text/javascript" src="http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.min.js"></script>
+			<script type="text/javascript" charset="utf-8">deprecated_browser.init('#ffc440', '#000000');</script>
+		<![endif]-->	
+	</body>
+</html>
+
+
+
+
+
+
+
+
