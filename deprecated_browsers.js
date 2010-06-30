@@ -412,7 +412,8 @@ var deprecated_browser = {
 				title_splash = 'Por que devo atualizar?';
 				description_splash = 'Os navegadores antigos, como o <strong>Internet Explorer 6</strong>, possuem sérios problemas de segurança e não são compatíveis com muitas funcionalidades dos sites atuais. Por isso, para ter uma melhor experiência de navegação e evitar riscos com vírus e programas espiões, baixe gratuitamente e instale no seu computador um dos navegadores modernos disponíveis.';
 				invite_splash = 'Atualize-o gratuitamente já!'
-				arrLanguage.push({title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash})
+				arrLanguage.push({title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash});
+				alert(arrLanguage[0].title_splash)
 			break;
 		}
 
