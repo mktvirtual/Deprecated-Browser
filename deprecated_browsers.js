@@ -402,14 +402,20 @@ var deprecated_browser = {
 	init : function(colorBg, colorText) {
 		
 		var lg = 'pt'
-		var textNode
-		
+		var title, description, mooreinfo, title_splash, description_splash, invite_splash
+		var arrLanguage = new Array();
 		switch(lg){
 			case 'pt':
-				textNode = 'Seu navegador é antigo e possui sérias falhas de segurança.'
+				title = 'Seu navegador é antigo e possui sérias falhas de segurança.';
+				description = 'Atualize-o gratuitamente por um dos navegadores ao lado.';
+				mooreinfo = 'Saiba mais';
+				title_splash = 'Por que devo atualizar?';
+				description_splash = 'Os navegadores antigos, como o <strong>Internet Explorer 6</strong>, possuem sérios problemas de segurança e não são compatíveis com muitas funcionalidades dos sites atuais. Por isso, para ter uma melhor experiência de navegação e evitar riscos com vírus e programas espiões, baixe gratuitamente e instale no seu computador um dos navegadores modernos disponíveis.';
+				invite_splash = 'Atualize-o gratuitamente já!'
+				arrLanguage.push({title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash})
 			break;
 		}
-		
+
 		if (this.getCookie('deprecated_browser').length > 0) 
 			return false;
 				
@@ -460,8 +466,8 @@ var deprecated_browser = {
 			info.setAttribute('id', 'info_deprecated');
 			info.style.color = readMoore.style.color = colorText;			
 			readMoore.setAttribute('id', 'info_moore_deprecated');
-			info.innerHTML = textNode;
-			readMoore.innerHTML = 'Atualize-o gratuitamente por um dos navegadores ao lado. <a id="read_moore_link" href="#" onClick="deprecated_browser.aboutDeprecated();">Saiba mais</a>';
+			info.innerHTML = title;
+			readMoore.innerHTML = description + ' <a id="read_moore_link" href="#" onClick="deprecated_browser.aboutDeprecated();">' + mooreinfo +'</a>';
 			leftSide.appendChild(info);	
 			leftSide.appendChild(readMoore);			
 			document.getElementById('read_moore_link').style.color = colorText;
