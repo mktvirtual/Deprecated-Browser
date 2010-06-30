@@ -402,10 +402,12 @@ var deprecated_browser = {
 	init : function(colorBg, colorText) {
 		
 		var lg = 'pt'
+		var textNode
 		
 		switch(lg){
 			case 'pt':
-			alert('aeeee');
+				textNode = 'Seu navegador é antigo e possui sérias falhas de segurança.'
+			break;
 		}
 		
 		if (this.getCookie('deprecated_browser').length > 0) 
@@ -458,7 +460,7 @@ var deprecated_browser = {
 			info.setAttribute('id', 'info_deprecated');
 			info.style.color = readMoore.style.color = colorText;			
 			readMoore.setAttribute('id', 'info_moore_deprecated');
-			info.innerHTML = 'Seu navegador é antigo e possui sérias falhas de segurança.';
+			info.innerHTML = textNode;
 			readMoore.innerHTML = 'Atualize-o gratuitamente por um dos navegadores ao lado. <a id="read_moore_link" href="#" onClick="deprecated_browser.aboutDeprecated();">Saiba mais</a>';
 			leftSide.appendChild(info);	
 			leftSide.appendChild(readMoore);			
