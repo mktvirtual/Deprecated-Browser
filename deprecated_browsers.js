@@ -444,7 +444,7 @@ var deprecated_browser = {
 		var cssNode = document.createElement('link');
 		cssNode.type = 'text/css';
 		cssNode.rel = 'stylesheet';
-		cssNode.href = 'http://github.com/brunomarks/updatebrowser/raw/multi-language/deprecated_browsers.css';
+		cssNode.href = 'http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers.css';
 		cssNode.media = 'screen';
 		headID.appendChild(cssNode);
 
