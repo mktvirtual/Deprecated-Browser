@@ -400,7 +400,14 @@ var deprecated_browser = {
 	},
 	
 	init : function(colorBg, colorText) {
-
+		
+		var lg = 'pt'
+		
+		switch(lg){
+			case 'pt':
+			alert('aeeee');
+		}
+		
 		if (this.getCookie('deprecated_browser').length > 0) 
 			return false;
 				
