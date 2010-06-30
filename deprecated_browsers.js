@@ -1,4 +1,3 @@
-
 	/**
 	* DD_belatedPNG: Adds IE6 support: PNG images for CSS background-image and HTML <IMG/>.
 	* Author: Drew Diller
@@ -337,9 +336,9 @@
 	* usage: include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js
 	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
 	**/	
-
+var language;
 var deprecated_browser = {
-
+	
 	closeDeprecated: function(){
 		document.getElementById("deprecated_browser").style.display = 'none';
 		deprecated_browser.setCookie('deprecated_browser','jabulani',2);
@@ -351,15 +350,18 @@ var deprecated_browser = {
 	aboutDeprecated:function(){
 		colorBg = document.getElementById("deprecated_browser").style.backgroundColor;
 		colorText = document.getElementById("deprecated_browser").style.color;
-
+		var arrLanguage = this.language(language);
+		
 		var about_deprecated_browser  = document.createElement('div');	
 		about_deprecated_browser.style.backgroundColor = colorBg;
 			document.body.prependChild = function(newChild) {
 				this.insertBefore(newChild, this.firstChild);
 				};
+				
+			//arr.push({title_intro:title_intro, desc_intro:desc_intro, mooreinfo:mooreinfo, title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash});	
 			document.body.prependChild(about_deprecated_browser);	
 			about_deprecated_browser.setAttribute('id', 'about_deprecated_browser');
-			about_deprecated_browser.innerHTML = "<div id='content_deprecated_browser'><a href='#' onClick='deprecated_browser.closeFancy()' id='close_about_deprecated_browser'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png' alt='Fechar' /></a><p class='tit_deprecated_browser'>Por que devo atualizar?</p><p id='description_deprecated_browser'>Os navegadores antigos, como o <strong>Internet Explorer 6</strong>, possuem sérios problemas de segurança e não são compatíveis com muitas funcionalidades dos sites atuais. Por isso, para ter uma melhor experiência de navegação e evitar riscos com vírus e programas espiões, baixe gratuitamente e instale no seu computador um dos navegadores modernos disponíveis.</p><p class='tit_deprecated_browser'>Atualize-o gratuitamente já!</p><ul><li><a target='blank' href='http://br.mozdev.org'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/firefox_b.png' alt='Download Firefox' /></a></li><li><a target='blank' href='http://www.microsoft.com/brasil/windows/internet-explorer'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/ie_b.png' alt='Download Internet Explorer' /></a></li><li><a target='blank' href='http://www.google.com.br/chrome'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/chrome_b.png' alt='Download Chrome' /></a></li>						<li><a target='blank' href='http://www.apple.com/br/safari'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/safari_b.png' alt='Download Safari' /></a></li></ul></div>"
+			about_deprecated_browser.innerHTML = "<div id='content_deprecated_browser'><a href='#' onClick='deprecated_browser.closeFancy()' id='close_about_deprecated_browser'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png' alt='Fechar' /></a><p class='tit_deprecated_browser'>" + arrLanguage[0].title_splash + "</p><p id='description_deprecated_browser'>"+ arrLanguage[0].description_splash +"</p><p class='tit_deprecated_browser'>"+ arrLanguage[0].invite_splash +"</p><ul><li><a target='blank' href='http://br.mozdev.org'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/firefox_b.png' alt='Download Firefox' /></a></li><li><a target='blank' href='http://www.microsoft.com/brasil/windows/internet-explorer'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/ie_b.png' alt='Download Internet Explorer' /></a></li><li><a target='blank' href='http://www.google.com.br/chrome'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/chrome_b.png' alt='Download Chrome' /></a></li>						<li><a target='blank' href='http://www.apple.com/br/safari'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/safari_b.png' alt='Download Safari' /></a></li></ul></div>"
 
 			document.getElementById("about_deprecated_browser").style.backgroundColor = colorBg;
 			var box_deprecated_browser = document.getElementById("content_deprecated_browser").getElementsByTagName('p');				
@@ -434,12 +436,12 @@ var deprecated_browser = {
 	},
 
 	init : function(colorBg, colorText, lg) {
-		
+
 		if (this.getCookie('deprecated_browser').length > 0) 
 			return false;
-					
+
 		var arrLanguage = this.language(lg);
-		
+		language = lg;
 		var headID = document.getElementsByTagName("head")[0];         
 		var cssNode = document.createElement('link');
 		cssNode.type = 'text/css';

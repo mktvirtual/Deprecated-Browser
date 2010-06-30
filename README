@@ -1,22 +1,24 @@
 	/**
 	* Author: MKT VIRTUAL (Bruno Marques)
 	* Email: bruno@mktvirtual.com.br
-	* URL: http://github.com/brunomarks/updatebrowser
+	* URL: http://github.com/mktvirtual/updatebrowser
 	* Version: 1.0
 	* Licensed under the MIT License
 	* Compatible with (IE6, IE7, Firefox < 3.6, Chrome, Safari 3)
-	* usage: include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js
+	* usage: include js - http://github.com/mktvirtual/Deprecated-Browser/blob/multi-language/deprecated_browsers.js
 	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
 	**/	
 
 usage: 
-include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js (size: 20.098 kb)
-or
-include minify js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js (size: 14.587 kb)
+include js - http://github.com/mktvirtual/Deprecated-Browser/blob/multi-language/deprecated_browsers.js (size: 20.098 kb)
 
 call init function
-deprecated_browser.init(bgColor, textColor);
+deprecated_browser.init(bgColor, textColor, lg);
 where color = hexadecimal string
+lg = language(string) where:
+				'pt' = portugues
+				'en' = english
+				'es' = spanish
 
 <html>
 	<head>
@@ -25,8 +27,8 @@ where color = hexadecimal string
 	<body>
 		<div>The content of the document</div>
 		<!--[if lt ie 7]>
-			<script type="text/javascript" src="http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.min.js"></script>
-			<script type="text/javascript" charset="utf-8">deprecated_browser.init('#ffc440', '#000000');</script>
+			<script type="text/javascript" src="http://github.com/mktvirtual/Deprecated-Browser/blob/multi-language/deprecated_browsers.js"></script>
+			<script type="text/javascript" charset="utf-8">deprecated_browser.init('#ffc440', '#000000', 'en');</script>
 		<![endif]-->	
 	</body>
 </html>
