@@ -1,4 +1,4 @@
-	
+
 	/**
 	* DD_belatedPNG: Adds IE6 support: PNG images for CSS background-image and HTML <IMG/>.
 	* Author: Drew Diller
@@ -326,8 +326,8 @@
 	} catch(r) {}
 	DD_belatedPNG.createVmlNameSpace();
 	DD_belatedPNG.createVmlStyleSheet();	
-	
-	
+
+
 	/**
 	* Author: Bruno Marques - MKT VIRTUAL
 	* Email: bruno@mktvirtual.com.br
@@ -337,9 +337,9 @@
 	* usage: include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js
 	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
 	**/	
-	
+
 var deprecated_browser = {
-	
+
 	closeDeprecated: function(){
 		document.getElementById("deprecated_browser").style.display = 'none';
 		deprecated_browser.setCookie('deprecated_browser','jabulani',2);
@@ -360,7 +360,7 @@ var deprecated_browser = {
 			document.body.prependChild(about_deprecated_browser);	
 			about_deprecated_browser.setAttribute('id', 'about_deprecated_browser');
 			about_deprecated_browser.innerHTML = "<div id='content_deprecated_browser'><a href='#' onClick='deprecated_browser.closeFancy()' id='close_about_deprecated_browser'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png' alt='Fechar' /></a><p class='tit_deprecated_browser'>Por que devo atualizar?</p><p id='description_deprecated_browser'>Os navegadores antigos, como o <strong>Internet Explorer 6</strong>, possuem sérios problemas de segurança e não são compatíveis com muitas funcionalidades dos sites atuais. Por isso, para ter uma melhor experiência de navegação e evitar riscos com vírus e programas espiões, baixe gratuitamente e instale no seu computador um dos navegadores modernos disponíveis.</p><p class='tit_deprecated_browser'>Atualize-o gratuitamente já!</p><ul><li><a target='blank' href='http://br.mozdev.org'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/firefox_b.png' alt='Download Firefox' /></a></li><li><a target='blank' href='http://www.microsoft.com/brasil/windows/internet-explorer'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/ie_b.png' alt='Download Internet Explorer' /></a></li><li><a target='blank' href='http://www.google.com.br/chrome'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/chrome_b.png' alt='Download Chrome' /></a></li>						<li><a target='blank' href='http://www.apple.com/br/safari'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/safari_b.png' alt='Download Safari' /></a></li></ul></div>"
-							
+
 			document.getElementById("about_deprecated_browser").style.backgroundColor = colorBg;
 			var box_deprecated_browser = document.getElementById("content_deprecated_browser").getElementsByTagName('p');				
 			for (var i = 0; i <= box_deprecated_browser.length; i++){
@@ -398,28 +398,48 @@ var deprecated_browser = {
 			return false;
 		}
 	},
-	
-	init : function(colorBg, colorText) {
-		
-		var lg = 'pt'
-		var title, description, mooreinfo, title_splash, description_splash, invite_splash
-		var arrLanguage = new Array();
-		switch(lg){
-			case 'pt':
-				title = 'Seu navegador é antigo e possui sérias falhas de segurança.';
-				description = 'Atualize-o gratuitamente por um dos navegadores ao lado.';
-				mooreinfo = 'Saiba mais';
-				title_splash = 'Por que devo atualizar?';
-				description_splash = 'Os navegadores antigos, como o <strong>Internet Explorer 6</strong>, possuem sérios problemas de segurança e não são compatíveis com muitas funcionalidades dos sites atuais. Por isso, para ter uma melhor experiência de navegação e evitar riscos com vírus e programas espiões, baixe gratuitamente e instale no seu computador um dos navegadores modernos disponíveis.';
-				invite_splash = 'Atualize-o gratuitamente já!'
-				arrLanguage.push({title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash});
-				alert(arrLanguage[0].title_splash)
-			break;
-		}
+	language : function(language){
+		arr = new Array();
+		var title_intro, desc_intro, mooreinfo, title_splash, description_splash, invite_splash;
+			switch(language){
+				case 'pt':
+					title_intro = 'Seu navegador é antigo e possui sérias falhas de segurança.';
+					desc_intro = 'Atualize-o gratuitamente por um dos navegadores ao lado.';
+					mooreinfo = 'Saiba mais';
+					title_splash = 'Por que devo atualizar?';
+					description_splash = 'Os navegadores antigos, como o <strong>Internet Explorer 6</strong>, possuem sérios problemas de segurança e não são compatíveis com muitas funcionalidades dos sites atuais. Por isso, para ter uma melhor experiência de navegação e evitar riscos com vírus e programas espiões, baixe gratuitamente e instale no seu computador um dos navegadores modernos disponíveis.';
+					invite_splash = 'Atualize-o gratuitamente já!'
+					arr.push({title_intro:title_intro, desc_intro:desc_intro, mooreinfo:mooreinfo, title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash});
+				break;
+				case 'es':
+					title_intro = 'Su navegador es una versión vieja y tiene graves fallas de seguridad.';
+					desc_intro = 'Actualícelo gratuitamente con uno de los navegadores al lado.';
+					mooreinfo = 'Saber mas';
+					title_splash = '¿Por qué actualizar?';
+					description_splash = 'Las versiones anteriores de navegadores, como el <strong>Internet Explorer 6</strong>, presentan graves problemas de seguridad y son incompatibles con muchas funcionalidades de los sitios actuales. Por eso, para tener una experiencia de navegación mejor y evitar riesgos de virus y programas espías, descargue gratuitamente e instale en su computadora uno de los navegadores modernos disponibles.';
+					invite_splash = '¡Actualícelo ya gratuitamente!';
+					arr.push({title_intro:title_intro, desc_intro:desc_intro, mooreinfo:mooreinfo, title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash});
+				break;
+				case 'en':
+					title_intro = 'Your browser is old and has serious security flaws.';
+					desc_intro = 'Please upgrade it at no cost by using one of the browsers at the side.';
+					mooreinfo = 'More info';
+					title_splash = 'Why upgrade?';
+					description_splash = 'Old browsers such as <strong>Internet Explorer 6</strong> have serious security problems and are not compatible with many features of current websites. Therefore, to have a better browsing experience and to avoid risks with viruses and spyware, download and install on your computer at no cost one of these new browsers available.';
+					invite_splash = 'Upgrade for free now!';
+					arr.push({title_intro:title_intro, desc_intro:desc_intro, mooreinfo:mooreinfo, title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash});
+				break;
+			}
+			return arr;
+	},
 
+	init : function(colorBg, colorText, lg) {
+		
 		if (this.getCookie('deprecated_browser').length > 0) 
 			return false;
-				
+					
+		var arrLanguage = this.language(lg);
+		
 		var headID = document.getElementsByTagName("head")[0];         
 		var cssNode = document.createElement('link');
 		cssNode.type = 'text/css';
@@ -427,7 +447,7 @@ var deprecated_browser = {
 		cssNode.href = 'http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.css';
 		cssNode.media = 'screen';
 		headID.appendChild(cssNode);
-		
+
 		if (document.createElement){
 			document.body.prependChild = function(newChild) {
 				this.insertBefore(newChild, this.firstChild);
@@ -442,7 +462,7 @@ var deprecated_browser = {
 			middle.style.margin = '0 auto';
 			middle.style.position = 'relative';
 			middle.style.width = '778px';
-		
+
 			deprecated_browser.appendChild(middle);
 
 			var leftSide = document.createElement('div');
@@ -467,12 +487,11 @@ var deprecated_browser = {
 			info.setAttribute('id', 'info_deprecated');
 			info.style.color = readMoore.style.color = colorText;			
 			readMoore.setAttribute('id', 'info_moore_deprecated');
-			info.innerHTML = title;
-			readMoore.innerHTML = description + ' <a id="read_moore_link" href="#" onClick="deprecated_browser.aboutDeprecated();">' + mooreinfo +'</a>';
+			info.innerHTML = arrLanguage[0].title_intro;
+			readMoore.innerHTML = arrLanguage[0].desc_intro + ' <a id="read_moore_link" href="#" onClick="deprecated_browser.aboutDeprecated();">' + arrLanguage[0].mooreinfo +'</a>';
 			leftSide.appendChild(info);	
 			leftSide.appendChild(readMoore);			
 			document.getElementById('read_moore_link').style.color = colorText;
-			
 		}
 	}
 }
