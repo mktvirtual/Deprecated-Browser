@@ -33,6 +33,7 @@
 				and hit the 31-limit mark, let's not use that method!
 				further reading: http://msdn.microsoft.com/en-us/library/ms531194(VS.85).aspx
 			*/
+			
 			var screenStyleSheet, printStyleSheet;
 			screenStyleSheet = document.createElement('style');
 			screenStyleSheet.setAttribute('media', 'screen');
