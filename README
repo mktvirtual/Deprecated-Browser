@@ -33,7 +33,7 @@
 				<script type="text/javascript" charset="utf-8">deprecated_browser.init('#2978B8', 'white', 'en');</script>			
 			<![endif]-->
 		</div>
-		
+				
 		<div class="exemple2">
 			<div><p>Exemple2: How to use only in IE6 with jQuery</p></div>
 			<!--[if lt ie 7]>
@@ -47,8 +47,7 @@
 					if(browserVersion == '6.0' && browserFamily) deprecated_browser.init('#ffc440', '#000000');
 				});
 			</script>
-		</div>
-		
+		</div>		
 	</body>
 </html>
 

@@ -334,7 +334,7 @@
 	* Version: 1.0
 	* Licensed under the MIT License
 	* usage: include js - http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers.js
-	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
+	* call function init in deprecated, read more in README file
 	**/	
 var language;
 var deprecated_browser = {
