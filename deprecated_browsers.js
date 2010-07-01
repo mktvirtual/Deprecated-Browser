@@ -333,7 +333,7 @@
 	* URL: http://github.com/brunomarks/updatebrowser
 	* Version: 1.0
 	* Licensed under the MIT License
-	* usage: include js - http://github.com/brunomarks/updatebrowser/raw/master/deprecated_browsers.js
+	* usage: include js - http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers.js
 	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
 	**/	
 var language;
@@ -361,7 +361,7 @@ var deprecated_browser = {
 			//arr.push({title_intro:title_intro, desc_intro:desc_intro, mooreinfo:mooreinfo, title_splash:title_splash, description_splash:description_splash, invite_splash:invite_splash});	
 			document.body.prependChild(about_deprecated_browser);	
 			about_deprecated_browser.setAttribute('id', 'about_deprecated_browser');
-			about_deprecated_browser.innerHTML = "<div id='content_deprecated_browser'><a href='#' onClick='deprecated_browser.closeFancy()' id='close_about_deprecated_browser'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png' alt='Fechar' /></a><p class='tit_deprecated_browser'>" + arrLanguage[0].title_splash + "</p><p id='description_deprecated_browser'>"+ arrLanguage[0].description_splash +"</p><p class='tit_deprecated_browser'>"+ arrLanguage[0].invite_splash +"</p><ul><li><a target='blank' href='http://br.mozdev.org'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/firefox_b.png' alt='Download Firefox' /></a></li><li><a target='blank' href='http://www.microsoft.com/brasil/windows/internet-explorer'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/ie_b.png' alt='Download Internet Explorer' /></a></li><li><a target='blank' href='http://www.google.com.br/chrome'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/chrome_b.png' alt='Download Chrome' /></a></li>						<li><a target='blank' href='http://www.apple.com/br/safari'><img src='http://github.com/brunomarks/updatebrowser/raw/master/images/safari_b.png' alt='Download Safari' /></a></li></ul></div>"
+			about_deprecated_browser.innerHTML = "<div id='content_deprecated_browser'><a href='#' onClick='deprecated_browser.closeFancy()' id='close_about_deprecated_browser'><img src='http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/xis.png' alt='Fechar' /></a><p class='tit_deprecated_browser'>" + arrLanguage[0].title_splash + "</p><p id='description_deprecated_browser'>"+ arrLanguage[0].description_splash +"</p><p class='tit_deprecated_browser'>"+ arrLanguage[0].invite_splash +"</p><ul><li><a target='blank' href='http://br.mozdev.org'><img src='http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/firefox_b.png' alt='Download Firefox' /></a></li><li><a target='blank' href='http://www.microsoft.com/brasil/windows/internet-explorer'><img src='http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/ie_b.png' alt='Download Internet Explorer' /></a></li><li><a target='blank' href='http://www.google.com.br/chrome'><img src='http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/chrome_b.png' alt='Download Chrome' /></a></li>						<li><a target='blank' href='http://www.apple.com/br/safari'><img src='http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/safari_b.png' alt='Download Safari' /></a></li></ul></div>"
 
 			document.getElementById("about_deprecated_browser").style.backgroundColor = colorBg;
 			var box_deprecated_browser = document.getElementById("content_deprecated_browser").getElementsByTagName('p');				
@@ -446,7 +446,7 @@ var deprecated_browser = {
 		var cssNode = document.createElement('link');
 		cssNode.type = 'text/css';
 		cssNode.rel = 'stylesheet';
-		cssNode.href = 'http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers.css';
+		cssNode.href = 'http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers_min.css';
 		cssNode.media = 'screen';
 		headID.appendChild(cssNode);
 
@@ -471,7 +471,7 @@ var deprecated_browser = {
 			var rightSide = document.createElement('div');
 			leftSide.setAttribute('id', 'left_deprecated');
 			rightSide.setAttribute('id', 'right_deprecated');
-			rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/safari.png" alt="Safari" /></a><a href="#" onClick="deprecated_browser.closeDeprecated()" id="close_deprecated"><img src="http://github.com/brunomarks/updatebrowser/raw/master/images/xis.png" alt="Fechar" /></a>';
+			rightSide.innerHTML = '<a href="http://br.mozdev.org" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/firefox.png" alt="Firefox" /></a><a href="http://www.microsoft.com/brasil/windows/internet-explorer" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/ie.png" alt="Internet Explorer" /></a><a href="http://www.google.com.br/chrome" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/chrome.png" alt="Chrome" /></a><a href="http://www.apple.com/br/safari" class="deprecated_icon" deprecated_browser="blank"><img src="http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/safari.png" alt="Safari" /></a><a href="#" onClick="deprecated_browser.closeDeprecated()" id="close_deprecated"><img src="http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/images/xis.png" alt="Fechar" /></a>';
 			middle.appendChild(rightSide);			
 			middle.appendChild(leftSide);
 
