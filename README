@@ -9,34 +9,47 @@
 	* call function deprecated to init, - deprecated('color'); where color = hexadecimal string;
 	**/	
 
-usage: 
-include js - http://github.com/mktvirtual/Deprecated-Browser/blob/multi-language/deprecated_browsers.js (size: 20.098 kb)
+*usage (version .min): 
+*include js -> http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers.min.js (size: 5 kb)
 
-call init function
-deprecated_browser.init(bgColor, textColor, lg);
-where color = hexadecimal string
-lg = language(string) where:
-				'pt' = portugues
-				'en' = english
-				'es' = spanish
+*call init function
+	deprecated_browser.init(bgColor, textColor, lg);
+	
+*where color = hexadecimal string
+*lg = language(string) where:
+				*'pt' = portugues
+				*'en' = english
+				*'es' = spanish
 
 <html>
 	<head>
 		<title>Title of the document</title>
 	</head>
 	<body>
-		<div>The content of the document</div>
-		<!--[if lt ie 7]>
-			<script type="text/javascript" src="http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers.js"></script>
-			<script type="text/javascript" charset="utf-8">deprecated_browser.init('#ffc440', '#000000', 'en');</script>
-		<![endif]-->	
+		<div class="exemple1">
+			<div><p>Exemple1: How to use only in IE6</p></div>
+			<!--[if lt ie 7]>
+				<script type="text/javascript" src="http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers.min.js"></script>
+				<script type="text/javascript" charset="utf-8">deprecated_browser.init('#2978B8', 'white', 'en');</script>			
+			<![endif]-->
+		</div>
+		
+		<div class="exemple2">
+			<div><p>Exemple2: How to use only in IE6 with jQuery</p></div>
+			<!--[if lt ie 7]>
+				<script type="text/javascript" src="http://github.com/mktvirtual/Deprecated-Browser/raw/multi-language/deprecated_browsers.min.js"></script>
+			<![endif]-->
+			
+			<script type="text/javascript" charset="utf-8">
+				jQuery(document).ready(function($){
+					var browserVersion = jQuery.browser.version;
+					var browserFamily = $.browser.msie;
+					if(browserVersion == '6.0' && browserFamily) deprecated_browser.init('#ffc440', '#000000');
+				});
+			</script>
+		</div>
+		
 	</body>
 </html>
-
-
-
-
-
-
 
 
