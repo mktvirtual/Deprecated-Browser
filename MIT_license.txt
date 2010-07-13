@@ -16,3 +16,24 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+------------------------------------------------------------------------------
+
+A permissão é concedida, a título gratuito, para qualquer pessoa que obtenha 
+uma cópia deste software e arquivos de documentação associados (o 
+"Software"), para lidar com o Software sem restrição, incluindo 
+sem limitação, os direitos para usar, copiar, modificar, mesclar, publicar, 
+distribuir, sublicenciar e / ou vender cópias do Software, e 
+permitir às pessoas a quem o Software é fornecido a fazê-lo, sem prejuízo 
+as seguintes condições: 
+
+O aviso de copyright acima e este aviso de permissão deve ser 
+incluídos em todas as cópias ou partes substanciais do Software. 
+
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER ESPÉCIE, 
+EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO ÀS GARANTIAS DE 
+COMERCIALIZAÇÃO, ADEQUAÇÃO A UMA FINALIDADE ESPECÍFICA E 
+Não-violação. EM HIPÓTESE os autores ou detentores dos direitos autorais BE 
+Responsável por qualquer reclamação, danos ou outra responsabilidade, SEJA EM UMA AÇÃO 
+DELITO DE CONTRATO, OU, resultantes de ou em CONNECTION 
+COM o software ou o uso ou outras negociações NO SOFTWARE.
